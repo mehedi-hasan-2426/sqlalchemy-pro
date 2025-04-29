@@ -6,6 +6,7 @@ engine = create_engine("sqlite:///app.db")
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
 
+
 # Model
 class User(Base):
     __tablename__ = "users"
@@ -13,18 +14,19 @@ class User(Base):
     name = Column(String)
     email = Column(String, unique=True)
 
+
 # Create tables
 Base.metadata.create_all(engine)
 
 # Example usage
 if __name__ == "__main__":
     db = Session()
-    
+
     # Create
     new_user = User(name="John Doe", email="john@example.com")
     db.add(new_user)
     db.commit()
-    
+
     # Read
     users = db.query(User).all()
     print("Users:")

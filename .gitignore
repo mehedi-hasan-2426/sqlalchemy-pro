@@ -3,3 +3,10 @@ __pycache__/
 *.sqlite
 .env
 .venv
+# Add these to your existing .gitignore or create one
+echo "__pycache__/" >> .gitignore
+echo "*.pyc" >> .gitignore
+echo "*.sqlite" >> .gitignore
+echo ".env" >> .gitignore
+echo ".venv" >> .gitignore
+echo "app.db" >> .gitignore
